@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="zh-CN,en,default"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | taijiweb's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">taijiweb's blog</h1><a id="logo" href="/.">taijiweb's blog</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-meta">Aug 5, 2016<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-thread-key="2016/08/05/domcom比ReactJS好在哪里？/" href="/2016/08/05/domcom比ReactJS好在哪里？/#comments" class="ds-thread-count"></a><div class="post-content"><h1 id="domcom比ReactJS好在哪里？"><a href="#domcom比ReactJS好在哪里？" class="headerlink" title="domcom比ReactJS好在哪里？"></a>domcom比ReactJS好在哪里？</h1><h2 id="为什么ReactJS能在angular之后崛起？"><a href="#为什么ReactJS能在angular之后崛起？" class="headerlink" title="为什么ReactJS能在angular之后崛起？"></a>为什么ReactJS能在angular之后崛起？</h2><p>  在John Resig设计的jQuery独霸前端javascript多年之后，Google推出的重量级AngularJS给前端开发带来巨大的观念变化，给人耳目一新之感，同时也推动前端的观念、技术和框架领域进入快速迭代，百花齐放的局面。长江后浪推前浪，AngularJS还在浪涛之巅，facebook推出的ReactJS又异军突起，再次给前端Web应用开发的思路带来巨大转变，颠覆了很多刚刚成为时尚的观念。  </p>
+<p>  追寻这些演变的踪迹，可以看到在前端开发中javascript逐渐从幕后和龙套角色日趋吃重，最终取代html成为导演和主演，占据了舞台的中心。jQuery，AngularJS和ReactJS既体现和推动了这一趋势，也代表着技术发展的不同阶段以及观念的不断流变。</p>
+<p>  为什么ReactJS能够从巅峰状态的AngularJS手中抢班夺权，顺利上位呢？一是因为AngularJS在技术层面还存在某些明显的不足，体现在概念比较繁杂，学习曲线陡峭<a href="https://docs.angularjs.org/guide/concepts" target="_blank" rel="external">1</a>，组合扩展能力不够好，数据传递以及管理还不够方便等等。更重要的是，AngularJS虽然引领和推动了前端的观念演进，代表了技术发展趋势，同时又迅速体现出滞后于观念演进和发展趋势的一面。AngularJS倡导单页面应用（SPA），重视数据绑定。从进步的一面看，说明AngularJS已经开始把Web前端开发看做软件应用开发，然而单页面这一名词说明它还是一种页面化的观念。数据绑定的思路也说明它还是把应用的主体看做是面向页面的数据展示与交互。因此它在技术设计上依然以Html作为主导。虽然Javascript是框架的实现途径，然而框架的整体设计意图都是指向扩展Html的能力。</p>
+<p>  AngularJS出现之初，技术大势和上述状态是比较一致的。当时Web前端开发主要还是面向桌面大屏幕，基本上是以页面为主体的网站，提供或多或少、或静态或动态的信息服务，针对这类需求AngularJS提供了非常高端的解决方案。然而互联网迅速迈进了移动时代。新一代的web前端开发越来越象桌面系统，更加注重友好的用户体验，更加面向任务，而非面向信息，因此需要更多不同的界面元素，以完成更复杂的交互。换句话说，现在web前端已经转向为不同大小屏幕用户设计面向Web的图形用户界面（GUI），而GUI应用的中心概念是部件，不是页面。这就决定了AngularJS(1.x)必将迎来替代者，ReactJS就是这一波浪潮中脱颖而出的明星。</p>
+<h2 id="React的卖点与痛点"><a href="#React的卖点与痛点" class="headerlink" title="React的卖点与痛点"></a>React的卖点与痛点</h2><p>关于React的原理与实现的文章非常多。比如<a href="http://www.alloyteam.com/2014/11/whydidwebuildreact/" target="_blank" rel="external">2</a>, <a href="http://anjia.github.io/2015/07/24/fe_react/" target="_blank" rel="external">3</a>, <a href="http://anjia.github.io/2015/07/24/fe_react_2/" target="_blank" rel="external">4</a>, <a href="http://www.ifeenan.com/javascript/2014-09-10-[%E8%AF%91]%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90React/" target="_blank" rel="external">5</a>, <a href="http://www.infoq.com/cn/articles/subversion-front-end-ui-development-framework-react" target="_blank" rel="external">6</a>都有一些基本的介绍。关于React学习使用技巧的文章更是遍布网络。本文对这些不作专门介绍，只谈一下React的卖点与痛点。</p>
+<p>根据我对React原理、实现的理解，对当前web前端React开发实践的观察，我认为React的卖点与痛点分别体现在下述方面：</p>
+<h3 id="卖点"><a href="#卖点" class="headerlink" title="卖点"></a>卖点</h3><ul>
+<li><p>更倾向Javascript  </p>
+<blockquote>
+<p>包括AngularJS在内的以前各种javascript库都是依托于html之上的。如果说使用这些库就象是跳芭蕾舞，那么使用ReactJS就像是跳现代舞，整体画风完全不一样了，程序员更自由更有创造力了。虽然React代码中有看起来象html的JSX代码，实际上JSX并不是真正的html，只是一种伪装的javascript代码。这和jQuery，angularJS及其类似框架，emberJS（需要handleBar模板）都是完全不一样的。</p>
+</blockquote>
+</li>
+<li><p>组件化编程  </p>
+<blockquote>
+<p>React是第一个以组件思维整体看待web前端开发的框架。不同于jQuery的插件，也不同于Angular的指令，React的组件将数据、UI及其交互统合于一体。这种模式给了我们一种处理应用结构的新思维。</p>
+</blockquote>
+</li>
+<li><p>促进代码重用  </p>
+<blockquote>
+<p>ReactJS灵活的组件组合能力大大提升了代码重用能力。AngularJS作为一个大而全的框架，由于设计上的缺陷，重用代码是非常不方便的。而ReactJS代码重用的粒度和可能性都增加了。</p>
+</blockquote>
+</li>
+<li><p>virtual dom  </p>
+<blockquote>
+<p>由于dom的特点，virtual dom能够在很多场合增强性能。当然这并不是绝对的。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h3><ul>
+<li><p>丑陋的JSX</p>
+<blockquote>
+<p>支持JSX的目的是为了吸引传统的页面设计者，照顾传统的基于html页面的开发习惯。然而从程序员的角度看，两种不同风格的代码混杂在一起是丑陋的，也是不符合纯粹的编程语言习惯的。这是一种面对历史传统的被动妥协，而不是一种顺应未来趋势的主动抉择。</p>
+</blockquote>
+</li>
+<li><p>不支持OOP是对更高层次代码重用的重大阻碍</p>
+<blockquote>
+<p>众多著名的GUI框架都是基于OOP设计的，无一不提供一个实用的类层次体系，比如MFC，WPF，Qt，WxWidgets, Android UI，cocoa等等。 很多人在推广ReactJS中不遗余力地贬低OOP，拔高函数式编程。在我看来，这是对ReactJS设计缺陷的粉饰。函数式编程有其合适的应用场景，而以状态为主的的web以及GUI绝非其所长。如果一定要将这种领域纳入函数式编程风格，只能是削足适履，带着镣铐跳舞。因为这种思维导致的设计偏差，React不得不使用很多特殊的技巧来处理一些适合用OOP处理非常顺手的场景，比如mixins（后来他们发现mixins带来的问题后开始劝导大家不要用mixin），高阶组件等等。</p>
+</blockquote>
+</li>
+<li><p>繁琐的API</p>
+<blockquote>
+<p>可能是出于设计者的编码风格喜好，ReactJS的API显得相当繁琐。比较明显的方面包括<a href="http://reactjs.cn/react/docs/component-specs.html" target="_blank" rel="external">生命周期方法</a>的命名（componentWillMount，componentDidMount，componentWillReceiveProps，shouldComponentUpdate，componentDidUpdate<br>componentWillUnmount，componentDidUnmount），获取dom节点的方法，关于refs的设计，事件方法的绑定等等。<br>有人可能对此不很敏感，或者认为IDE能够解决。然而如果能够设计更简洁的API，少依赖于工具，总是要更好一些。在我看来，简洁的设计才是美的设计。jQuery可以看做这方面明显的佐证。为什么大家喜欢使用jQuery？当然主要原因是因为jQuery解决了移植性的梦魇，提供了某些程序员欢迎的能力，但是毫无疑问其简洁优雅的API设计也是一个卖点。反过来说，原生API不受欢迎，除了移植性问题之外，无可否认，名称冗长难记也是一个阻碍。  </p>
+</blockquote>
+</li>
+<li><p>更新之痛</p>
+<blockquote>
+<p>React对组件的更新基于一种自上而下的方案。组件最初获得初始的props和getInitialState，然而在后续调用setState时根据state的比较决定需要更新的子组件。当发现状态没有变化时默认是不会更新子组件的。因此，当子组件发生了没有纳入到上层组件状态管理的改变，或者使用了可变的数据结构，都可能导致丢失本该发生的更新。弥补这种设计方案的缺陷是React倡导使用不可变数据结构、将数据全局化，集中化的原因之一。遗憾的是，我看到React的倡导者从来不提这方面的真实原因，反而文过饰非，说什么全局数据优于局部数据，全局状态优于局部状态。其实，从良好的编程实践看，状态局部化，私有、封装是更好的风格。否则，就无法理解为什么各种语言要提供模块机制，要倡导少用全局变量，全局状态，多用无副作用的函数了，也无法理解javascript漫长的解决模块化的历程了。</p>
+</blockquote>
+</li>
+<li><p>React全家桶</p>
+<blockquote>
+<p>AngularJS有概念繁杂，学习曲线陡峭之弊。ReactJS有搭配之痛。因为ReactJS设计上的不足，导致React必须使用JSX语法，尽量使用不可变数据，青睐所谓单向数据流，导致要用好ReactJS还必须搭配jsx编译器（babel），支持flux模式的外部库（flux/reflux/redux)，有的场景还需要使用ImmutableJS，这些组合在一起被称为React全家桶。毋容置疑，全家桶给学习使用带来了不必要的负担。程序员应该根据应用和领域需求来挑选搭配的库，而不是被框架强制地选择一组搭配的库。</p>
+</blockquote>
+</li>
+<li><p>diff型virtual dom性能缺陷  </p>
+<blockquote>
+<p>目前，主流的虚拟dom方法都是类似于ReactJS的方法（比如virtual-dom这个库）。这种方法是将生成组件内部结构代码放置在render方法中。因此整个应用每次render都会需要重新生成整个应用的组件层次树以及执行diff算法。虽然从理论上可以从dom中删除原来的整个dom树，重新生成新的dom树，但是这从用户体验和性能上都是不合适的。因此就有必要每次render时需要比较当前生成的组件层次树和前一次缓存的组件层次树直接的差异，寻找优化的解决方案。而这种比较和替换问题的最优解算法的时间复杂度是O(n3)，当前ReactJS和类似库的解决方案是基于某些假设做出简化，在绝大多数情况下也能获得非常好的性能，这就是Reac所谓的调节（Reconciliation）方案。然而，这种方案存在性能负担：一是还是需要进行相当多的diff运算，二是可能会产生一些不必要的dom操作，三是需要较多的人工干预，比如通过shouldComponentUpdate以及key键。</p>
+</blockquote>
+</li>
+</ul>
+<p>某个框架设计之初，总会有些局限，可能考虑了某些问题的同时忽视了另外的问题。作为框架设计者和推广者，为了打消人们的顾虑，吸引更多用户，扩大社区，在宣传上对框架做出某些粉饰是可以理解的。但是，作为框架的挑选者和使用者，不应该人云亦云，而应该尽力明辨事实与广告，分清是非；作为使用者，能做到这一点也有助于更好地使用框架，用其所长，避其所短。上述ReactJS的痛点，有的表现得是很明显的。但是因为框架设计推广者的一番粉饰，很多似是而非的结论竟然三人成虎，登堂入室，成为web前端开发的主流观点。有的时候当然也会有人针对这些痛点提出某些指责和抱怨，但是却总是面临很多已经被宣传所忽悠的大众的责难。这是一件很令人叹息的事情，对于这一领域的发展也形成了某些阻碍。</p>
+<h2 id="Domcom的解决方案"><a href="#Domcom的解决方案" class="headerlink" title="Domcom的解决方案"></a>Domcom的解决方案</h2><ul>
+<li><p>不用JSX，代码更简洁  </p>
+<blockquote>
+<p>在使用Javascript部件的模式下，当前的web前端已经转入由程序员来掌控整个界面的时代。所以Domcom在API设计上彻底地倾向程序员而不是页面设计师的习惯，目的是保证即使不用类似xml的模板语言也能写出简洁优雅的程序，避免混杂JSX的丑陋代码。现有的Domcom API完全实现了这一目标。不管是用coffee-script，或者用原生Javascript（虽然ES6会更好，即使是ES5也很可行), Domcom应用代码的简洁程度也胜过用JSX的ReactJS。</p>
+</blockquote>
+</li>
+<li><p>鼓励函数式编程，拥抱OOP  </p>
+<blockquote>
+<p>不象React只能继承Component类（<code>class X extends Component，或者</code>React.createClass({})`）,也就是说所有的部件彼此之间都是平坦的，无法形成继承层次，需要重用公共代码需要借助mixin或者高阶部件等技巧。 Domcom自身已经提供了一组精悍的基础类层次，用户程序可以在此基础上以类继承的方式继续扩展。比如，可以通过Tag &gt; Button &gt; ImageButton的方式，让子类重用父类的代码，胜过ReactJS使用mixin或者高阶组件的权宜性方法。</p>
+</blockquote>
+</li>
+<li><p>简洁的API，易学易用  </p>
+<blockquote>
+<p>Domcom在设计API时尽量简洁，使用短名字，大多数方法和函数都只需要0-2个参数。这对学习和使用都是非常有帮助的。比如Tag部件的常用方法借鉴了jQuery的API，包括<code>prop</code>，<code>attr</code>, <code>css</code>, <code>show</code>, <code>hide</code>, <code>bind</code>, <code>unbind</code>等。</p>
+</blockquote>
+</li>
+<li><p>更新方案灵活健壮，更方便扩展</p>
+<blockquote>
+<p>Domcom中所有部件都包含标识部件有效性的数据成员，并提供了API自底向上控制部件的有效性。系统本身已经完整地实现了部件的失效管理，用户程序不需要显式地进行干预，只需要选用合适的响应函数即可调整系统的性能。同时，系统也允许利用这种有效性管理机制以及提供的API开发不同的更新方案。这方面的例子可以参考<a href="https://github.com/taijiweb/dc-util/blob/master/NullableTagMixin.coffee">NullableTagMixin</a>。</p>
+</blockquote>
+</li>
+<li><p>domcom不需要全家桶  </p>
+<blockquote>
+<p>domcom在设计上尽量拥抱javascript语言的特点，不敌视javascript固有的特征。因此，Domcom不会因为类似JSX的需求逼迫你使用babel，不会因为不可变数据的需求驱使你学习ImmutableJS，不会因为全局数据的要求而鼓动你使用flux/reflux/redux。Domcom就象jQuery一样是一个自给自足的框架，你只要在页面中包含domcom.js，或者用导入domcom模块，使用dc名字空间下的API就好了。用Domcom不会因为框架的原因驱使你学习全家桶，从此你可以专注于业务需求。</p>
+</blockquote>
+</li>
+<li><p>更合适的虚拟dom方案，避免Diff型Virtual dom的性能缺陷</p>
+<blockquote>
+<p>前面提到，ReactJS将组件内部结构声明过程置于render方法之中。其实我们只要把对内部结构的声明过程从render方法前移到构造函数中，就可以完全避免diff两颗树的问题。这种方案显得更为合理自然，更加具有声明性，还更便于管理部件的dom节点，减少dom子树的创建/加载/卸载，实现更好的性能。 </p>
+</blockquote>
+</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>综上所述，Domcom是一款秉承React理念的web前端框架，同时又在观念、设计和实现等方面都向前进了一步，弥补了React的缺陷。它站在巨人的肩膀上，青出于蓝而胜于蓝，整体上是一个更好的选择。</p>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://github.com/taijiweb/2016/08/05/domcom比ReactJS好在哪里？/" data-id="cisabpx4w000063bhe1v0of5g" class="article-share-link">分享到</a><div class="tags"></div><div class="post-nav"><a href="/2016/08/08/从实例看React与Domcom/" class="pre"></a><a href="/2016/06/29/框架的演进/" class="next"></a></div><div data-thread-key="2016/08/05/domcom比ReactJS好在哪里？/" data-title="" data-url="http://github.com/taijiweb/2016/08/05/domcom比ReactJS好在哪里？/" class="ds-share flat"><div class="ds-share-inline"><ul class="ds-share-icons-16"><li data-toggle="ds-share-icons-more"><a href="javascript:void(0);" class="ds-more">分享到：</a></li><li><a href="javascript:void(0);" data-service="weibo" class="ds-weibo">微博</a></li><li><a href="javascript:void(0);" data-service="qzone" class="ds-qzone">QQ空间</a></li><li><a href="javascript:void(0);" data-service="qqt" class="ds-qqt">腾讯微博</a></li><li><a href="javascript:void(0);" data-service="wechat" class="ds-wechat">微信</a></li></ul><div class="ds-share-icons-more"></div></div></div><div data-thread-key="2016/08/05/domcom比ReactJS好在哪里？/" data-title="" data-url="http://github.com/taijiweb/2016/08/05/domcom比ReactJS好在哪里？/" data-author-key="1" class="ds-thread"></div></div></div></div><div class="pure-u-1-4"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://github.com/taijiweb"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/09/从React教程学Domcom/">从React教程学Domcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/08/从实例看React与Domcom/">从实例看React与Domcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/domcom比ReactJS好在哪里？/">domcom比ReactJS好在哪里？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/29/框架的演进/">框架的演进</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/28/hello-world/">Welcome to taijweb's blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/27/前端简史演义/">前端简史演义</a></li></ul></div><div class="widget"><div class="comments-title"><i class="fa fa-comment-o"> 最近评论</i></div><div data-num-items="5" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="32" data-show-title="1" class="ds-recent-comments"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.github.com/chaosim" title="chaosim's github" target="_blank">chaosim's github</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">taijiweb's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>var duoshuoQuery = {short_name:'taijiweb'};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
