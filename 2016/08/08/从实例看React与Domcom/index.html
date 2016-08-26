@@ -4,8 +4,8 @@
 <h3 id="Domcom"><a href="#Domcom" class="headerlink" title="Domcom"></a>Domcom</h3><p>Domcom提供了完整的部件事件系统，用户程序可以用<code>component.emit</code>, <code>component.on</code>, <code>component.off</code>方法管理部件上的事件及其回调函数。生命周期事件不过是Domcom框架本身发送的一组系统事件而已。包括willMount, didMount, willAttach, didAttach, willRender, didRender。可以按照如下方法动态地添加一个或多个回调函数，也可以用component.off动态地删除某个回调函数。 </p>
 <pre><code>component.on(&apos;eventName&apos;, function(event, node) { ... })
 </code></pre><p>请注意Domcom部件事件与Dom事件的区别，详情请查看有关文档。  </p>
-<h3 id="获得Dom节点"><a href="#获得Dom节点" class="headerlink" title="获得Dom节点"></a>获得Dom节点</h3><h3 id="React-1"><a href="#React-1" class="headerlink" title="React"></a>React</h3><p>需要结合 refs 和 React.findDOMNode</p>
-<pre><code>React.findDOMNode(component)
+<h3 id="获得Dom节点"><a href="#获得Dom节点" class="headerlink" title="获得Dom节点"></a>获得Dom节点</h3><h3 id="React-1"><a href="#React-1" class="headerlink" title="React"></a>React</h3><p>需要结合 <code>refs</code> 和 <code>React.findDOMNode</code></p>
+<pre><code>React.findDOMNode(componentRef)
 </code></pre><h4 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a>演示代码</h4><pre><code>var MyComponent = React.createClass({
         handleClick: function() {
        React.findDOMNode(this.refs.myTextInput).focus();
@@ -23,7 +23,7 @@
           );
         }
   });
-</code></pre><h3 id="Domcom-1"><a href="#Domcom-1" class="headerlink" title="Domcom"></a>Domcom</h3><p>简单地用部件变量名及node字段即可达到目的。</p>
+</code></pre><h3 id="Domcom-1"><a href="#Domcom-1" class="headerlink" title="Domcom"></a>Domcom</h3><p>简单地用部件变量名及 <code>.node</code> 字段即可达到目的。</p>
 <pre><code>component.node
 </code></pre><h4 id="演示代码-1"><a href="#演示代码-1" class="headerlink" title="演示代码"></a>演示代码</h4><pre><code>const text1;
 const {div, text, button} = dc;
