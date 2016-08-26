@@ -21,31 +21,8 @@
 <blockquote>
 <p>因为我们想简化 ajax 请求代码，所以在这里引入 jQuery，但是 React 并不依赖于 jQuery 。</p>
 </blockquote>
-<h4 id="Domcom"><a href="#Domcom" class="headerlink" title="Domcom"></a>Domcom</h4><pre><code>&lt;!-- index.html --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot; /&gt;
-    &lt;title&gt;Domcom Tutorial&lt;/title&gt;
-    &lt;script src=&quot;http://cdn.jsdelivr.net/domcom/0.5.2/domcom.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
-    &lt;!-- domcom 可以很方便地使用 ES5 原生代码来编写。因此并不需要包含babel --&gt;
-    &lt;!-- script src=&quot;https://npmcdn.com/babel-core@5.8.38/browser.min.js&quot;&gt;&lt;/script --&gt;
-    &lt;script src=&quot;https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js&quot;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
-    &lt;script src=&quot;scripts/example.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-      // 在本教程的剩下部分，我们会在这个 script 标签中编写我们的 JavaScript 代码。
-      // 我们没有任何高端的页面自动加载刷新工具，所以在修改了代码之后，需要手动刷新浏览器来查看变化。
-      // 下面，启动服务器，在浏览器中打开 http://localhost:3000 。
-      // 在没对源码进行修改的前提下，第一次打开这个 URL 会看到我们计划构建的应用的一个最终样子。
-      // 当你完成本教程，需要使用外部javascript文件的时候，只需要删掉这个 `&lt;script&gt;` 标签就可以了。
-    &lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>因为Domcom所有的api都在dc名字空间上，因此使用dc本身并不要求使用babel之类的工具。本教程的Domcom代码仅使用了两项ES6特征：解构赋值和const关键词。因此只要把解构赋值语句用ES5语法重写，将const关键词用var替换，代码即已经符合ES5标准。当然，使用ES6会让代码更简洁一些，使用babel预编译还是鼓励的。</p>
+<h4 id="Domcom"><a href="#Domcom" class="headerlink" title="Domcom"></a>Domcom</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Domcom Tutorial<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://cdn.jsdelivr.net/domcom/0.5.2/domcom.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- domcom 可以很方便地使用 ES5 原生代码来编写。因此并不需要包含babel --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"&gt;&lt;/script --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"scripts/example.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></span><br><span class="line">      // 在本教程的剩下部分，我们会在这个 script 标签中编写我们的 JavaScript 代码。</span><br><span class="line">      // 我们没有任何高端的页面自动加载刷新工具，所以在修改了代码之后，需要手动刷新浏览器来查看变化。</span><br><span class="line">      // 下面，启动服务器，在浏览器中打开 http://localhost:3000 。</span><br><span class="line">      // 在没对源码进行修改的前提下，第一次打开这个 URL 会看到我们计划构建的应用的一个最终样子。</span><br><span class="line">      // 当你完成本教程，需要使用外部javascript文件的时候，只需要删掉这个 `<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">` 标签就可以了。</span><br><span class="line">    </span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>因为Domcom所有的api都在dc名字空间上，因此使用dc本身并不要求使用babel之类的工具。本教程的Domcom代码仅使用了两项ES6特征：解构赋值和const关键词。因此只要把解构赋值语句用ES5语法重写，将const关键词用var替换，代码即已经符合ES5标准。当然，使用ES6会让代码更简洁一些，使用babel预编译还是鼓励的。</p>
 <blockquote>
 <p>为行文方便，文中涉及的dc名字空间的API名称并没有一一声明和导入。这些名字包括div, span, h1, h2, input, text, html, $model, flow(flow.bind, flow.bindings)等。实际编码时需要根据ES6或ES5的不同语法加以处理。请留意。</p>
 </blockquote>
@@ -68,22 +45,8 @@
   - CommentList  
     - Comment  
   - CommentForm  
-</code></pre><h4 id="React-2"><a href="#React-2" class="headerlink" title="React"></a>React</h4><p>让我们构造 CommentBox 组件，它只是一个简单的 <code>&lt;div&gt;</code> ：</p>
-<pre><code>// tutorial1.js
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      &lt;div className=&quot;commentBox&quot;&gt;
-        Hello, world! I am a CommentBox.
-      &lt;/div&gt;
-    );
-  }
-});
-ReactDOM.render(
-  &lt;CommentBox /&gt;,
-  document.getElementById(&apos;content&apos;)
-);
-</code></pre><p> 注意，原生 HTML 元素名以小写字母开头，而自定义的 React 类名以大写字母开头。</p>
+</code></pre><h4 id="React-2"><a href="#React-2" class="headerlink" title="React"></a>React</h4><p>让我们构造 CommentBox 组件，它只是一个简单的 <code>&lt;div&gt;</code> ：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tutorial1.js</span></span><br><span class="line"><span class="keyword">var</span> CommentBox = React.createClass(&#123;</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"commentBox"</span>&gt;</span></span><br><span class="line">        Hello, world! I am a CommentBox.</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">CommentBox</span> /&gt;</span>,</span><br><span class="line">  document.getElementById('content')</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure></p>
+<p> 注意，原生 HTML 元素名以小写字母开头，而自定义的 React 类名以大写字母开头。</p>
 <h5 id="不用JSX"><a href="#不用JSX" class="headerlink" title="不用JSX"></a>不用JSX</h5><p>首先你注意到 JavaScript 代码中 XML 式的语法语句。我们有一个简单的预编译器，用于将这种语法糖转换成纯 JavaScript 代码：</p>
 <pre><code>// tutorial1-raw.js
 var CommentBox = React.createClass({displayName: &apos;CommentBox&apos;,
